@@ -64,6 +64,7 @@ fun getCodeForToolbarKey(key: ToolbarKey) = when (key) {
     FULL_RIGHT -> KeyCode.MOVE_END_OF_LINE
     PAGE_START -> KeyCode.MOVE_START_OF_PAGE
     PAGE_END -> KeyCode.MOVE_END_OF_PAGE
+    TAB -> KeyCode.TAB
 }
 
 fun getCodeForToolbarKeyLongClick(key: ToolbarKey) = when (key) {
@@ -115,6 +116,7 @@ fun getStyleableIconId(key: ToolbarKey) = when (key) {
     FULL_RIGHT -> R.styleable.Keyboard_iconFullRight
     PAGE_START -> R.styleable.Keyboard_iconPageStart
     PAGE_END -> R.styleable.Keyboard_iconPageEnd
+    TAB -> R.styleable.Keyboard_iconTabKey
 }
 
 fun getToolbarIconByName(name: String, context: Context): Drawable? {
@@ -130,7 +132,7 @@ fun getToolbarIconByName(name: String, context: Context): Drawable? {
 enum class ToolbarKey {
     VOICE, CLIPBOARD, NUMPAD, UNDO, REDO, SETTINGS, SELECT_ALL, SELECT_WORD, COPY, CUT, PASTE, ONE_HANDED,
     INCOGNITO, AUTOCORRECT, CLEAR_CLIPBOARD, CLOSE_HISTORY, EMOJI, LEFT, RIGHT, UP, DOWN, WORD_LEFT, WORD_RIGHT,
-    PAGE_UP, PAGE_DOWN, FULL_LEFT, FULL_RIGHT, PAGE_START, PAGE_END
+    PAGE_UP, PAGE_DOWN, FULL_LEFT, FULL_RIGHT, PAGE_START, PAGE_END, TAB
 }
 
 val toolbarKeyStrings = entries.associateWithTo(EnumMap(ToolbarKey::class.java)) { it.toString().lowercase(Locale.US) }
